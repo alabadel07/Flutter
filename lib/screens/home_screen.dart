@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             AdsWidget(),
-            const ProductsGridWidget(),
+            ProductsGridWidget(),
           ],
         ),
       ),
