@@ -2,6 +2,7 @@
 // bibliothèque material : bibliothèque de design de google
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:store/providers/category_provider.dart';
 import 'package:store/providers/product_provider.dart';
 // import 'package:store/screens/home_screen.dart';
 import 'package:store/services/router_service.dart';
@@ -12,6 +13,9 @@ void main() => runApp(
         providers: [
           ChangeNotifierProvider(
             create: (context) => ProductProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => CategoryProvider(),
           ),
         ],
         child: const Store(),
