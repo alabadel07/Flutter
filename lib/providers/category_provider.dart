@@ -8,7 +8,7 @@ class CategoryProvider extends ChangeNotifier {
   // getter / setter
   Category? get category => _category;
 
-  set product(Category? value) {
+  set category(Category? value) {
     _category = value;
     // notifyListeners : permet de mettre à jour les écouteurs du provider
     notifyListeners();
