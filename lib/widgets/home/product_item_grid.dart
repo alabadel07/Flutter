@@ -17,7 +17,7 @@ class ProductItemGrid extends StatelessWidget {
       children: [
         Image.network(
           product.image,
-          height: 130,
+          height: 90,
           fit: BoxFit.contain,
         ),
         SizedBox(
