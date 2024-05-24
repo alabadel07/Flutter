@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:store/models/category.dart';
 
 class CategoryProvider extends ChangeNotifier {
-  // stocker un produit
-  Category? _category;
+  // Stocker le nom de la catégorie sélectionnée
+  String? _selectedCategory;
 
-  // getter / setter
-  Category? get category => _category;
+  // Getter / Setter pour la catégorie sélectionnée
+  String? get selectedCategory => _selectedCategory;
 
-  set category(Category? value) {
-    _category = value;
-    // notifyListeners : permet de mettre à jour les écouteurs du provider
+  set selectedCategory(String? category) {
+    _selectedCategory = category;
+    // Notifier les écouteurs du provider que la catégorie sélectionnée a été mise à jour
     notifyListeners();
   }
 }

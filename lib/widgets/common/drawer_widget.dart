@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:store/services/categories_service.dart';
 import 'package:store/models/category.dart';
+import 'package:store/providers/category_provider.dart'; // Importez votre provider de catégories
 
 class DrawerWidget extends StatelessWidget {
   DrawerWidget({Key? key});
@@ -42,6 +44,8 @@ class DrawerWidget extends StatelessWidget {
                         title: Text(snapshot.data![index].name),
                         onTap: () {
                           // Action à effectuer lorsqu'une catégorie est sélectionnée
+                          Provider.of<CategoryProvider>(context, listen: false)
+                              .selectedCategory = snapshot.data![index].name;
                         },
                       );
                     },
