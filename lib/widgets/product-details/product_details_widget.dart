@@ -3,6 +3,7 @@ import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:provider/provider.dart';
 import 'package:store/models/product.dart';
 import 'package:store/providers/product_provider.dart';
+import 'package:store/providers/cart_provider.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
   const ProductDetailsWidget({super.key});
@@ -11,6 +12,7 @@ class ProductDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // watch (getter) : accéder au product stocké dans ProductProvider
     Product? product = context.watch<ProductProvider>().product;
+    final cart = Provider.of<CartProvider>(context, listen: false);
 
     return Column(
       children: [
@@ -43,7 +45,17 @@ class ProductDetailsWidget extends StatelessWidget {
           ),
         ),
         RatingStars(
-          value: product.rating['rate'],
+          value: product.rating['rate'].toDouble(),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        ElevatedButton(
+          onPressed: () {
+            cart.addItem(
+                product.id.toString(), product.price.toDouble(), product.title);
+          },
+          child: const Text('Add to Cart'),
         ),
       ],
     );
