@@ -1,8 +1,8 @@
-class Category {
-  String name;
+import 'package:flutter/material.dart';
 
-  // constructeur
-  Category({
-    required this.name,
-  });
+class Category {
+  final String name;
+  final IconData icon;
+
+  Category({required this.name, required this.icon});
 }

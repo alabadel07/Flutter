@@ -39,6 +39,7 @@ class DrawerWidget extends StatelessWidget {
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       return ListTile(
+                        leading: Icon(snapshot.data![index].icon),
                         title: Text(snapshot.data![index].name),
                         onTap: () {
                           // Action à effectuer lorsqu'une catégorie est sélectionnée
