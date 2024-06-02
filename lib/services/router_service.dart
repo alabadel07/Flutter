@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:store/screens/home_screen.dart';
-import 'package:store/screens/product_details_screen.dart';
+import 'package:store/screens/category_products_screen.dart';
+import 'package:store/main.dart';
 
 class RouterService {
   static GoRouter getRouter() {
@@ -8,13 +8,11 @@ class RouterService {
       routes: [
         GoRoute(
           path: '/',
-          name: 'home',
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => HomeScreen(),
         ),
         GoRoute(
-          path: '/product-details',
-          name: 'product-details',
-          builder: (context, state) => const ProductDetailsScreen(),
+          path: '/category-products',
+          builder: (context, state) => CategoryProductsScreen(),
         ),
       ],
     );

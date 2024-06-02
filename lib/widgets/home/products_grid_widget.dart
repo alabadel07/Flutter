@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:store/models/product.dart';
 import 'package:store/services/products_service.dart';

@@ -7,7 +7,6 @@ class CategoryDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Watch the selected category from the provider
     String? selectedCategory =
         context.watch<CategoryProvider>().selectedCategory;
 
@@ -33,7 +32,6 @@ class CategoryDetailsWidget extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        // Other details about the category can be displayed here
       ],
     );
   }

@@ -10,7 +10,6 @@ class CategoriesService {
     'jewelery': Icons.watch,
     'men\'s clothing': Icons.male,
     'women\'s clothing': Icons.female,
-    // Ajoutez d'autres catégories et leurs icônes ici si nécessaire
   };
 
   Future<List<Category>> getCategories() async {
@@ -21,9 +20,8 @@ class CategoriesService {
       List<dynamic> data = jsonDecode(response.body);
       List<Category> categories = data.map((value) {
         String categoryName = value.toString();
-        IconData icon = _categoryIcons[categoryName.toLowerCase()] ??
-            Icons
-                .category; // Icône par défaut si la catégorie n'est pas dans le map
+        IconData icon =
+            _categoryIcons[categoryName.toLowerCase()] ?? Icons.category;
         return Category(name: categoryName, icon: icon);
       }).toList();
       return categories;
